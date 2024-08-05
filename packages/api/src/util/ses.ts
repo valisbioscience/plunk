@@ -1,13 +1,13 @@
 import { SES } from "@aws-sdk/client-ses";
-import { AWS_ACCESS_KEY_ID, AWS_REGION, AWS_SECRET_ACCESS_KEY } from "../app/constants";
+import { AWS_REGION } from "../app/constants";
 
 export const ses = new SES({
 	apiVersion: "2010-12-01",
 	region: AWS_REGION,
-	credentials: {
-		accessKeyId: AWS_ACCESS_KEY_ID,
-		secretAccessKey: AWS_SECRET_ACCESS_KEY,
-	},
+	// credentials: {
+	// 	accessKeyId: AWS_ACCESS_KEY_ID,
+	// 	secretAccessKey: AWS_SECRET_ACCESS_KEY,
+	// },
 });
 
 export const getIdentities = async (identities: string[]) => {
